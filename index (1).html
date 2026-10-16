@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>مدوّن الحسابات الذكي | تحميل تطبيق إدارة الحسابات</title>
+  <meta name="description" content="حمّل تطبيق مدوّن الحسابات الذكي لإدارة الحسابات والمديونيات والسجلات المالية بسهولة وسرعة من هاتفك الأندرويد." />
+  <meta name="keywords" content="مدون الحسابات الذكي, تطبيق حسابات, إدارة الحسابات, مديونيات, دفتر حسابات, حسابات العملاء, تطبيق أندرويد" />
+  <meta name="author" content="مدوّن الحسابات الذكي" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0f172a" />
+
+  <meta property="og:title" content="مدوّن الحسابات الذكي" />
+  <meta property="og:description" content="تطبيق عملي وسهل لإدارة حساباتك وسجلاتك المالية من هاتفك." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ar_AR" />
+  <meta property="og:image" content="app-preview.png" />
+
+  <style>
+    :root{
+      --blue:#2f67b7;
+      --blue-dark:#234f91;
+      --blue-soft:#eaf3ff;
+      --blue-pale:#f5f9ff;
+      --text:#10213d;
+      --muted:#60708a;
+      --line:#d9e5f4;
+      --green:#2f9d43;
+      --red:#d7262e;
+      --white:#ffffff;
+      --shadow:0 16px 40px rgba(38,92,165,.13);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+
+    body{
+      margin:0;
+      font-family:"Tahoma","Arial",sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 10% 0%, #dcebff 0, transparent 26%),
+        linear-gradient(180deg,#f8fbff 0%,#edf5ff 100%);
+      min-height:100vh;
+    }
+
+    a{text-decoration:none;color:inherit}
+    .container{width:min(1160px,92%);margin:auto}
+
+    nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:18px 0;
+      position:sticky;
+      top:0;
+      z-index:10;
+      background:rgba(248,251,255,.9);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(47,103,183,.08);
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-weight:800;
+      color:var(--blue-dark);
+      font-size:1.08rem;
+    }
+
+    .logo{
+      width:46px;
+      height:46px;
+      border-radius:14px;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(180deg,var(--blue),var(--blue-dark));
+      color:#fff;
+      font-weight:900;
+      font-size:1.35rem;
+      box-shadow:0 8px 22px rgba(47,103,183,.25);
+    }
+
+    .nav-btn{
+      color:#fff;
+      background:linear-gradient(180deg,var(--blue),var(--blue-dark));
+      padding:11px 18px;
+      border-radius:13px;
+      font-weight:700;
+      box-shadow:0 8px 20px rgba(47,103,183,.2);
+    }
+
+    .hero{
+      min-height:76vh;
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:52px;
+      align-items:center;
+      padding:58px 0 76px;
+    }
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 13px;
+      border-radius:999px;
+      color:var(--blue-dark);
+      background:var(--blue-soft);
+      border:1px solid #cfe1f8;
+      font-size:.92rem;
+      font-weight:700;
+      margin-bottom:18px;
+    }
+
+    h1{
+      font-size:clamp(2.35rem,5vw,4.8rem);
+      line-height:1.15;
+      margin:0 0 18px;
+      letter-spacing:-1px;
+      color:#112749;
+    }
+
+    h1 span{color:var(--blue)}
+
+    .lead{
+      font-size:1.13rem;
+      line-height:2;
+      color:var(--muted);
+      max-width:700px;
+      margin:0 0 28px;
+    }
+
+    .actions{display:flex;gap:14px;flex-wrap:wrap}
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:15px 23px;
+      border-radius:14px;
+      font-weight:800;
+      transition:.2s ease;
+    }
+
+    .btn-primary{
+      background:linear-gradient(180deg,var(--blue),var(--blue-dark));
+      color:#fff;
+      box-shadow:0 12px 28px rgba(47,103,183,.23);
+    }
+
+    .btn-primary:hover{transform:translateY(-2px)}
+
+    .btn-secondary{
+      color:var(--blue-dark);
+      background:#fff;
+      border:1px solid var(--line);
+      box-shadow:0 8px 22px rgba(38,92,165,.08);
+    }
+
+    .note{margin-top:14px;color:#7d8ba1;font-size:.9rem}
+
+    .preview-wrap{
+      width:100%;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    .preview-card{
+      width:min(525px,100%);
+      padding:10px;
+      border-radius:34px;
+      background:#fff;
+      border:1px solid #d7e5f5;
+      box-shadow:0 28px 70px rgba(31,83,151,.18);
+    }
+
+    .preview-card img{
+      display:block;
+      width:100%;
+      height:auto;
+      border-radius:25px;
+    }
+
+    .features{padding:42px 0 92px}
+
+    .section-title{text-align:center;margin-bottom:36px}
+    .section-title h2{
+      color:#16335f;
+      font-size:2.1rem;
+      margin:0 0 10px
+    }
+    .section-title p{color:var(--muted);margin:0}
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:25px;
+      box-shadow:0 12px 30px rgba(42,91,153,.08);
+    }
+
+    .card .icon{
+      width:46px;
+      height:46px;
+      border-radius:14px;
+      display:grid;
+      place-items:center;
+      background:var(--blue-soft);
+      color:var(--blue);
+      font-size:1.2rem;
+      margin-bottom:16px;
+      font-weight:900;
+    }
+
+    .card:nth-child(2) .icon,
+    .card:nth-child(4) .icon{
+      background:#eaf8ed;
+      color:var(--green);
+    }
+
+    .card:nth-child(3) .icon{
+      background:#fff0f1;
+      color:var(--red);
+    }
+
+    .card h3{
+      margin:0 0 10px;
+      color:#17345f;
+    }
+
+    .card p{
+      color:var(--muted);
+      line-height:1.85;
+      margin:0;
+    }
+
+    .download{
+      margin:0 auto 78px;
+      padding:38px;
+      border-radius:28px;
+      border:1px solid #cfe0f3;
+      background:
+        linear-gradient(135deg,#ffffff 0%,#eef6ff 100%);
+      text-align:center;
+      box-shadow:var(--shadow);
+    }
+
+    .download h2{
+      font-size:2rem;
+      color:#16335f;
+      margin-top:0;
+    }
+
+    .download p{
+      color:var(--muted);
+      line-height:1.8;
+    }
+
+    footer{
+      border-top:1px solid #dbe7f5;
+      color:#7d8ba1;
+      padding:24px 0 34px;
+      text-align:center;
+      font-size:.9rem;
+      background:rgba(255,255,255,.55);
+    }
+
+    @media(max-width:850px){
+      nav{position:static}
+      .hero{
+        grid-template-columns:1fr;
+        padding-top:34px;
+        text-align:center
+      }
+      .lead{margin-left:auto;margin-right:auto}
+      .actions{justify-content:center}
+      .preview-card{max-width:440px}
+      .grid{grid-template-columns:1fr}
+    }
+
+    @media(max-width:520px){
+      nav .nav-btn{display:none}
+      .hero{padding-bottom:56px}
+      .download{padding:27px 18px}
+      .btn{width:100%}
+      .preview-card{padding:7px;border-radius:24px}
+      .preview-card img{border-radius:18px}
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"SoftwareApplication",
+    "name":"مدوّن الحسابات الذكي",
+    "applicationCategory":"FinanceApplication",
+    "operatingSystem":"Android",
+    "description":"تطبيق لإدارة الحسابات والمديونيات والسجلات المالية بسهولة.",
+    "downloadUrl":"https://github.com/ahmedalshapoty-dev/smart-accounts/releases/download/v1.0.2/app-release.apk"
+  }
+  </script>
+</head>
+<body>
+
+  <div class="container">
+    <nav>
+      <div class="brand">
+        <div class="logo">ح</div>
+        <span>مدوّن الحسابات الذكي</span>
+      </div>
+      <a class="nav-btn" href="#download">تحميل التطبيق</a>
+    </nav>
+
+    <main class="hero">
+      <section>
+        <div class="badge">✓ متوفر لأجهزة Android</div>
+        <h1>حساباتك أبسط مع <span>مدوّن الحسابات الذكي</span></h1>
+        <p class="lead">
+          نظّم حساباتك وسجلاتك المالية بطريقة سهلة وواضحة. يساعدك مدوّن الحسابات الذكي على متابعة الحسابات والمديونيات، وإصدار التقارير والكشوفات، مع التذكيرات والإشعارات المهمة، والوصول إلى بياناتك بسرعة من مكان واحد.
+        </p>
+
+        <div class="actions">
+          <a class="btn btn-primary" href="https://github.com/ahmedalshapoty-dev/smart-accounts/releases/download/v1.0.2/app-release.apk">
+            ⬇ تحميل التطبيق APK — الإصدار 1.0.2
+          </a>
+          <a class="btn btn-secondary" href="#features">اكتشف المميزات</a>
+        </div>
+
+        <p class="note">تحميل الإصدار 1.0.2 لأجهزة Android عبر GitHub Releases — حجم الملف نحو 61 ميجابايت.</p>
+      </section>
+
+      <section class="preview-wrap" aria-label="صورة تطبيق مدوّن الحسابات الذكي">
+        <div class="preview-card">
+          <img src="app-preview.png" alt="واجهة تطبيق مدوّن الحسابات الذكي" />
+        </div>
+      </section>
+    </main>
+
+    <section class="features" id="features">
+      <div class="section-title">
+        <h2>كل أدوات حساباتك في مكان واحد</h2>
+        <p>واجهة واضحة وهوية متناسقة مع التطبيق لتجربة استخدام سهلة وسريعة.</p>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <div class="icon">◉</div>
+          <h3>تنظيم الحسابات</h3>
+          <p>احتفظ بحسابات العملاء والسجلات المالية بشكل مرتب وسهل الوصول.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon">✓</div>
+          <h3>متابعة المديونيات</h3>
+          <p>تابع المبالغ والحركات المسجلة واعرف ما لك وما عليك بصورة واضحة.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon">▤</div>
+          <h3>تقارير وكشوفات</h3>
+          <p>أنشئ تقارير وكشوفات للحسابات والحركات لمراجعة بياناتك ومشاركتها بسهولة.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon">🔔</div>
+          <h3>تذكيرات وإشعارات</h3>
+          <p>استفد من التذكيرات والإشعارات لمتابعة المواعيد والحسابات المهمة في وقتها.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon">⚡</div>
+          <h3>سريع وسهل</h3>
+          <p>واجهة بسيطة وعملية تساعدك على إنجاز عملياتك اليومية بدون تعقيد.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon">⌕</div>
+          <h3>وصول أسرع للمعلومات</h3>
+          <p>ابحث وراجع السجلات والحسابات بسرعة من مكان واحد منظم وواضح.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="download" id="download">
+      <h2>حمّل مدوّن الحسابات الذكي</h2>
+      <p>نزّل الإصدار 1.0.2 على هاتف Android وابدأ بتنظيم حساباتك. حجم التطبيق نحو 61 ميجابايت.</p>
+      <a class="btn btn-primary" href="https://github.com/ahmedalshapoty-dev/smart-accounts/releases/download/v1.0.2/app-release.apk">
+        ⬇ تحميل التطبيق APK — الإصدار 1.0.2
+      </a>
+    </section>
+  </div>
+
+  <footer>
+    <div class="container">
+      © 2026 مدوّن الحسابات الذكي — جميع الحقوق محفوظة.
+    </div>
+  </footer>
+
+</body>
+</html>
