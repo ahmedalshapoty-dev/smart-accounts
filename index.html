@@ -297,6 +297,36 @@
       .preview-card{padding:7px;border-radius:24px}
       .preview-card img{border-radius:18px}
     }
+
+    .developer-line{
+      margin-top:8px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      flex-wrap:wrap;
+    }
+    .whatsapp-link{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:30px;
+      height:30px;
+      border-radius:50%;
+      background:#25D366;
+      color:#fff;
+      transition:.2s ease;
+      box-shadow:0 5px 14px rgba(0,0,0,.12);
+    }
+    .whatsapp-link:hover{
+      transform:translateY(-1px) scale(1.05);
+    }
+    .whatsapp-link svg{
+      width:18px;
+      height:18px;
+      fill:currentColor;
+    }
+
   </style>
 
   <script type="application/ld+json">
@@ -403,7 +433,21 @@
 
   <footer>
     <div class="container">
-      © 2026 مدوّن الحسابات الذكي — جميع الحقوق محفوظة.
+      © 2026 مدوّن الحسابات الذكي — جميع الحقوق محفوظة.<br>
+      <div class="developer-line">
+        <span>المطور: أحمد محمد حسن</span>
+        <a class="whatsapp-link"
+           href="https://wa.me/967774036870"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="التواصل مع المطور عبر واتساب"
+           title="تواصل عبر واتساب">
+          <svg viewBox="0 0 32 32" aria-hidden="true">
+            <path d="M19.11 17.21c-.28-.14-1.63-.8-1.88-.89-.25-.09-.43-.14-.61.14-.18.28-.7.89-.86 1.07-.16.18-.32.2-.59.07-.28-.14-1.16-.43-2.21-1.36-.82-.73-1.37-1.63-1.53-1.91-.16-.28-.02-.43.12-.57.12-.12.28-.32.41-.48.14-.16.18-.28.28-.46.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.02-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.28-.96.94-.96 2.29 0 1.35.98 2.65 1.12 2.84.14.18 1.93 2.95 4.68 4.13.65.28 1.16.45 1.56.58.66.21 1.25.18 1.72.11.52-.08 1.63-.67 1.86-1.31.23-.65.23-1.21.16-1.31-.07-.12-.25-.18-.52-.32z"/>
+            <path d="M16.03 3.2c-7.07 0-12.81 5.74-12.81 12.81 0 2.26.59 4.47 1.71 6.41L3.1 29l6.74-1.77a12.74 12.74 0 0 0 6.18 1.58h.01c7.07 0 12.81-5.75 12.81-12.81 0-3.42-1.33-6.64-3.75-9.06A12.72 12.72 0 0 0 16.03 3.2zm0 23.44h-.01a10.6 10.6 0 0 1-5.42-1.48l-.39-.23-4 1.05 1.07-3.9-.25-.4a10.62 10.62 0 0 1-1.63-5.67c0-5.86 4.77-10.63 10.64-10.63 2.84 0 5.51 1.11 7.52 3.12a10.57 10.57 0 0 1 3.11 7.51c-.01 5.86-4.78 10.63-10.64 10.63z"/>
+          </svg>
+        </a>
+      </div>
     </div>
   </footer>
 
