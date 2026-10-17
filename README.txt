@@ -4,9 +4,14 @@
 - index.html
 - app-preview.png
 - robots.txt
+- README.txt
 
-رابط تحميل APK داخل index.html:
+ملف APK لا ترفعه إلى جذر المستودع.
+ارفعه داخل GitHub Releases ضمن الوسم:
+v1.0.2
+
+ويجب أن يكون اسم الملف داخل Assets:
+app-release.apk
+
+رابط التحميل المستخدم داخل index.html:
 https://github.com/ahmedalshapoty-dev/smart-accounts/releases/download/v1.0.2/app-release.apk
-
-يجب نشر Release بالوسم v1.0.2 ورفع الملف باسم app-release.apk ضمن Assets.
-إذا كان اسم الملف مختلفاً، عدّل الرابط في index.html ليتطابق معه.
