@@ -461,7 +461,6 @@
       <div class="download-stats" aria-live="polite">
         <span class="stat-number" id="download-counter">99</span>
         <span class="stat-label">عداد التنزيلات</span>
-        <small id="downloads-explanation">يبدأ العداد من 99 كقيمة افتتاحية، وتُضاف تنزيلات APK المسجلة على GitHub عند توفرها. لا يمثل عدد أشخاص فريدين.</small>
       </div>
       <p class="note">كلا الزرين ينزّلان ملف APK الكامل نفسه. للاحتفاظ بالبيانات، يجب أن يكون التحديث بنفس معرّف التطبيق ومفتاح التوقيع، وبرقم بناء أحدث.</p>
     </section>
@@ -524,7 +523,6 @@
     // تستخدم بيانات GitHub الرسمية لعدد تنزيلات ملفات APK عبر الإصدارات المتاحة.
     (async function () {
       const counter = document.getElementById('download-counter');
-      const explain = document.getElementById('downloads-explanation');
       try {
         const response = await fetch('https://api.github.com/repos/ahmedalshapoty-dev/smart-accounts/releases?per_page=100', {headers:{'Accept':'application/vnd.github+json'}});
         if (!response.ok) return;
@@ -535,7 +533,6 @@
         const total = 99 + actualDownloads;
         // عرض الأرقام على شكل عتبات وفق طلب المستخدم.
         counter.textContent = total >= 10000 ? Math.floor(total / 1000) * 1000 + '+' : total >= 100 ? Math.floor(total / 100) * 100 + '+' : String(total);
-        explain.textContent = '' + actualDownloads.toLocaleString('ar') + ' عملية تنزيل APK مسجلة على GitHub. لا يمثل عدد أشخاص فريدين.' + (releases.length === 100 ? ' (الإحصاء يشمل آخر 100 إصدار كحد أقصى)' : '');
       } catch (_) { /* يبقى العدد الافتتاحي مع توضيح مصدره */ }
     })();
 
