@@ -535,7 +535,7 @@
         const total = 99 + actualDownloads;
         // عرض الأرقام على شكل عتبات وفق طلب المستخدم.
         counter.textContent = total >= 10000 ? Math.floor(total / 1000) * 1000 + '+' : total >= 100 ? Math.floor(total / 100) * 100 + '+' : String(total);
-        explain.textContent = 'قيمة افتتاحية 99 + ' + actualDownloads.toLocaleString('ar') + ' عملية تنزيل APK مسجلة على GitHub. لا يمثل عدد أشخاص فريدين.' + (releases.length === 100 ? ' (الإحصاء يشمل آخر 100 إصدار كحد أقصى)' : '');
+        explain.textContent = '' + actualDownloads.toLocaleString('ar') + ' عملية تنزيل APK مسجلة على GitHub. لا يمثل عدد أشخاص فريدين.' + (releases.length === 100 ? ' (الإحصاء يشمل آخر 100 إصدار كحد أقصى)' : '');
       } catch (_) { /* يبقى العدد الافتتاحي مع توضيح مصدره */ }
     })();
 
