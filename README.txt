@@ -1,17 +1,36 @@
-مدوّن الحسابات الذكي — الإصدار 1.0.2
+مدون الحسابات الذكي — صفحة تحميل وتحديث Android
 
-الملفات التي ترفعها إلى جذر مستودع GitHub Pages:
+روابط التطبيق الرسمية:
+- رابط الموقع: https://ahmedalshapoty-dev.github.io/smart-accounts/
+- رابط تحميل أحدث إصدار APK: https://github.com/ahmedalshapoty-dev/smart-accounts/releases/latest/download/app-release.apk
+- رابط الإصدار 1.0.3 مباشرة (بعد نشره): https://github.com/ahmedalshapoty-dev/smart-accounts/releases/download/v1.0.3/app-release.apk
+- صفحة جميع الإصدارات: https://github.com/ahmedalshapoty-dev/smart-accounts/releases
+
+ارفع الملفات إلى جذر مستودع GitHub Pages:
 - index.html
-- app-preview.png
 - robots.txt
-- README.txt
+- sitemap.xml
+- app-preview.png (الصورة الموجودة لديك في المستودع)
 
-ملف APK لا ترفعه إلى جذر المستودع.
-ارفعه داخل GitHub Releases ضمن الوسم:
-v1.0.2
+صفحة الموقع تحتوي خيارين:
+1) تحميل التطبيق للمستخدم الجديد.
+2) تحديث التطبيق للمستخدم الذي يمتلك نسخة سابقة.
 
-ويجب أن يكون اسم الملف داخل Assets:
-app-release.apk
+كلا الخيارين ينزّلان APK الكامل من أحدث Release عبر GitHub. لا يمكن لموقع الويب معرفة التطبيقات المثبتة على الهاتف تلقائياً؛ يختار الزائر الخيار المناسب.
 
-رابط التحميل المستخدم داخل index.html:
-https://github.com/ahmedalshapoty-dev/smart-accounts/releases/download/v1.0.2/app-release.apk
+لنشر الإصدار الجديد: أنشئ Release بالوسم v1.0.3 وارفع ملفاً باسم app-release.apk وضع الإصدار كـ Latest.
+
+مهم للحفاظ على بيانات المستخدم عند تثبيت التحديث فوق الإصدار القديم:
+- نفس applicationId / package name.
+- نفس مفتاح التوقيع (signing key).
+- versionCode أعلى من الإصدار المثبت.
+- لا تغيّر أو تمسح البيانات المحلية أثناء ترقيات قاعدة البيانات.
+
+الصفحة تقرأ رقم أحدث إصدار وحجم الملف من GitHub API، وعند تعذّر الاتصال يبقى رابط latest/download قابلاً للاستخدام.
+
+التحديث الأخير:
+- عرض اسم المطور أحمد محمد حسن الشبوطي في تذييل الصفحة مع الحفاظ على بيانات SEO.
+- أيقونة مشاركة التطبيق باستخدام قائمة المشاركة على الهاتف أو واتساب كخيار احتياطي.
+- زر نسخ رابط التطبيق بجانب أيقونة المشاركة.
+- زر واتساب للتواصل المباشر مع المطور على +967774036870.
+- عداد تنزيلات بقيمة افتتاحية 99 (قيمة عرض وليست تنزيلاً حقيقياً)، يضاف إليها download_count لملفات APK في إصدارات GitHub العامة (أول 100 إصدار)، مع عرض 100+ و200+ و10000+ وفق العدد. لا يقيس الأشخاص الفريدين ولا التثبيتات.
