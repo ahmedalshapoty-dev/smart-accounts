@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://ahmedalshapoty-dev.github.io/smart-accounts/sitemap.xml
+Sitemap: https://smart-accounts.pages.dev/sitemap.xml
